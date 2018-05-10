@@ -1,0 +1,17 @@
+/* pages/toAgree/toAgree.wxss */
+
+.container {
+  font-size: 26rpx;
+  padding: 0 50rpx;
+  box-sizing: border-box
+}
+
+.content {
+  text-indent: 50rpx;
+  margin-top: 20rpx;
+}
+
+.title {
+  text-align: center;
+  font-size: 32rpx;
+}

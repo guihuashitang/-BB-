@@ -1,0 +1,28 @@
+<!--pages/faceHome/faceHome.wxml-->
+<view class='container'>
+  <swiper class='swiper' indicator-dots='{{indicatordots}}' current='{{currentIndex}}' circular='{{circular}}' indicator-active-color='#a37031'  interval="5000"  autoplay="{{autoplay}}"  bindchange='changeColor' indicator-color="#999999">
+     <swiper-item wx:for='{{imgList}}'>
+      <view class='swiper-item-in' style=''>
+        <image class='faceList' src='{{item.homepage_poster}}'bindload="imageUtil" catchtap='toPhoto' data-id='{{item.id}}' data-index='{{index}}' style='width:{{widHei[index].imagewidth}}px;height: {{widHei[index].imageheight}}px;left:{{widHei[index].position}};margin-left:-{{widHei[index].imagewidth/2}}px'></image>
+         <view class='more' catchtap='toMore'>
+          <image class='more_img' src='/pages/images/more_img.png' mode='widthFix'></image>
+          <view class='more_text'>更多系列»</view>
+         </view> 
+         <!-- <view class='title'>{{item.series_title}}</view> 暂时不用 -->
+      </view>
+      <view class='point' wx:if="{{isPoint}}" catchtap='toPhoto' data-id='{{item.id}}'>
+        <!-- <image class='point-img' src='/pages/images/pointerClick.png'></image> -->
+        <view class='point-txt'  >
+          <view>点击一下</view>
+          <view>开始换脸游戏吧~</view>
+        </view>
+      </view>
+      <view class='arrows' catchtap='toPhoto' data-id='{{item.id}}'>
+        <image class="{{currentIndex==0?'opic':''}}" data-id='{{item.id}}'  src='/pages/images/left_arrow.png' mode='widthFix' catchtap='toprev'></image>
+        <image class="{{currentIndex==imgList.length-1?'opic':''}}" data-id='{{item.id}}'   src='/pages/images/right_arrow.png'  mode='widthFix' catchtap='toNext'></image>
+      </view>
+    </swiper-item> 
+  </swiper>
+</view>
+<!--页面加载  -->
+ <loading hidden="{{pageLoad}}">数据加载中...</loading>

@@ -1,0 +1,83 @@
+<!--pages/Photograph/Photograph.wxml-->
+<view class='container' wx:if="{{!isLoading}}" >
+<image src='{{series_showBackGroud}}' class='series_showBackGroud'></image>
+  <view class='photograph'>
+    <view class='photograph_in'>
+      <view class='face-photo'>
+        <view class='cloud' catchtap='toMore'>更多系列</view>
+        <view>
+          <text class=' '>{{userName}}</text>，你好</view>
+        <view class='content'>{{!isShare?guid_text_1:guid_text_2}}</view>
+        <view class='agreement'> 
+          <view class='radio' bindtap='isChoosed'>
+            <image wx:if='{{choosed}}' class='choose' src='/pages/images/choosed.png'></image>
+          </view>
+          <view>我已同意<text class='font-color' catchtap='toAgree'>逗脸小程序服务协议</text>
+          </view>
+        </view>
+      </view>
+      <view class='album' >
+      <view class='album_in' bindtap='toChooseImage'>
+            <image src='/pages/images/camera.png'></image>
+      </view>
+  
+      </view>
+    </view>
+    <view class='face-handle'>
+      <view class='tohome' bindtap='toHome'>
+      <view class='home'>《去首页看看</view>
+      <view class='botHome'></view>
+      </view>
+      <block wx:if="{{isFree==1}}">
+        <view class='isFree'>
+          <image class='ispay_img' src='/pages/images/free_img.png'></image>
+          <view>免费系列</view>
+        </view>
+      </block>
+      <block wx:if="{{isFree==2}}">
+        <view class='isFree pay'>
+          <image class='ispay_img' src='/pages/images/pay_img.png'></image>
+          <view>已打赏</view>
+        </view>
+      </block>
+      <block wx:if="{{isFree==0}}">
+        <view class='isFree nopay'  bindtap='paymoney'>
+          <image class='ispay_img' src='/pages/images/nopay_img.png'></image>
+          <view>打赏系列</view>
+          </view>
+      </block>
+      </view> 
+    </view>
+  </view>
+
+  <!--loading  -->
+<view class='no_build' wx:if='{{isLoading}}'>
+  <image class='build_bg' src='/pages/images/build_bg.jpg'></image>
+  <image class='gif_loading' src='/pages/images/shengchengzhong.gif'></image>
+</view>
+<!--支付  -->
+<view class='modal' wx:if="{{isDisplayPay}}">
+  <view class='mask'></view>
+  <view class='pay_moadl'>
+  <view class='closeX' catchtap='closePay'>x</view>
+    <!-- <image src='/pages/images/close_pay.png' class='close_pay' catchtap='closePay'></image> -->
+    <image src='/pages/images/pay_bg.png' class='pay_bg'></image>
+    <view>
+      <text class='font'>打赏{{price}}元</text>
+    </view>
+    <view style='margin-top:20rpx'>挑战更多角色~</view>
+    <view class='button'>
+      <!-- <view class='cancel' catchtap='closePay'>取消</view> -->
+      <view class='confirm' catchtap='UserPaySerise'>赏</view>
+    </view>
+  </view>
+</view>
+<!--引导  -->
+<view wx:if="{{isDisplayGuide}}" bindtap='isDisplayGuideBind'>
+<view class='mask'></view>
+  <image class='Photograph_BG' mode='widthFix' src='/pages/images/Photograph_BG.png'></image>
+  <image class='know_BG' mode='widthFix' src='/pages/images/know_BG.png'></image>
+</view>
+
+<!--页面加载  -->
+ <loading hidden="{{pageLoad}}">数据加载中...</loading>

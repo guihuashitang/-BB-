@@ -1,0 +1,310 @@
+/* pages/Photograph/Photograph.wxss */
+
+.container {
+  background-color: #eeede6;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: flex-end;
+  padding-bottom: 80rpx;
+}
+
+.container .photograph {
+  width: 100%;
+
+}
+
+.photograph_in{
+  position: relative
+}
+
+.container .photograph .face-photo {
+  width: 630rpx;
+  height: 390rpx;
+  background-color: #fff;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  box-shadow: 0 10rpx 10rpx #e4e2e0;
+  padding: 30rpx;
+   position: relative 
+}
+
+.photograph .face-photo .cloud{
+  background: url(http://image.chubanyun.net/images/faceChange/cloud.png);
+  position: absolute;
+  top: -20rpx;
+  right: -10rpx; 
+  width: 123rpx;
+  height: 74rpx;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 20rpx;
+  color: #fff;
+  padding: 5rpx 5rpx 0 65rpx
+}
+
+.photograph .album {
+  width: 205rpx;
+  height: 205rpx;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #fe9a3f, #fe4a60);
+  box-shadow: 0 10rpx 10rpx #f78e9b;
+  margin: 0 auto;
+  margin-top: -102rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.album_in{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #fe9a3f, #fe4a60);
+  /* box-shadow: 0 10rpx 10rpx #f78e9b; */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15
+}
+
+.photograph .album:active{
+    box-shadow: none
+}
+
+.photograph .album image {
+    position: absolute;
+  width: 99rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+
+.face-handle {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+}
+
+.photograph .face-photo .content {
+  text-indent: 70rpx;
+  font-size: 32rpx;
+  margin-top: 10rpx
+}
+
+
+.photograph .face-photo .agreement{
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center
+}
+
+.photograph .face-photo .agreement .font-color{
+  color: #a52220
+}
+.face-handle{
+  font-size: 28rpx
+}
+
+.face-handle .isFree{
+  border-bottom-left-radius: 50rpx;
+  border-top-left-radius: 50rpx; 
+  width: 230rpx;
+  background-color: #95cdf3;
+  color: #fff;
+  text-align: center;
+  height: 45rpx;
+  line-height: 45rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.face-handle .tohome{
+  margin-left: 20rpx;
+  position: relative
+}
+.tohome .botHome{
+  position: absolute;
+  width: 188rpx;
+  height: 48rpx;
+  background: #fff;
+  border: 1px solid #a37330;
+  left: 10rpx;
+  top: 10rpx
+}
+.tohome .home{
+  position: absolute;
+  background: #fabf30;
+  width: 188rpx;
+  height: 48rpx;
+  color: #fff;
+  border: 1px solid #a37330;
+  z-index: 2
+}
+.agreement .radio{
+  width: 30rpx;
+  height: 30rpx;
+  border: 1px solid #999;
+  border-radius: 5rpx;
+  margin-right: 10rpx ;
+  display: flex;
+  align-items: center;
+  text-align: center
+}
+
+.choose{
+  width: 22rpx;
+  height: 16rpx;
+  margin: 0 auto
+}
+
+.face-handle  .ispay_img{
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx
+}
+
+.pay{
+  background-color: #4eb984!important;
+}
+
+.nopay{
+  background-color: #f5b451!important
+}
+
+.wxNme{
+  color: #a42320;
+  /* text-decoration: underline */
+}
+
+.no_build{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.no_build .build_bg{
+  width: 100%;
+  height: 100%;
+}
+
+.gif_loading{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 600rpx;
+  height: 1010rpx;
+  margin-left: -275rpx;
+  margin-top: -455rpx 
+}
+
+.series_showBackGroud{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.modal .pay_moadl {
+  position: fixed;
+  width: 520rpx;
+  height: 340rpx;
+  background-color: #fff;
+  left: 50%;
+  top: 50%;
+  margin-left: -260rpx;
+  margin-top: -170rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 32rpx;
+  z-index: 11;
+}
+.modal .pay_moadl .pay_bg {
+  width: 100%;
+  height: 100%;
+  margin-top: -100%;
+}
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 20rpx;
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+}
+
+.button .cancel {
+  width: 40%;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 10rpx;
+  border: 1px solid #eee;
+  color: #999;
+}
+
+.button .confirm {
+  width: 90%;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 10rpx;
+  background: linear-gradient(to right, #ffa937, #fe3769);
+  color: #fff;
+  box-shadow: 0 5rpx 5rpx #fb94a4;
+  position: relative;
+ margin: 10px auto;
+}
+
+.button .confirm:active {
+  box-shadow: none;
+}
+
+.close_pay {
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 0rpx;
+  z-index: 999;
+}
+.closeX {
+  /* background: url(/pages/images/close_pay.png); */
+  position: absolute;
+  right: 5rpx;
+  top: 5rpx;
+  width: 44rpx;
+  height: 44rpx;
+  background: rgba(0, 0, 0,0.5);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 44rpx;
+  color: #fff ;
+  z-index: 13
+}
+.Photograph_BG{
+  width: 620rpx;
+  position: absolute;
+  left: 52%;
+  margin-left: -310rpx;
+  bottom: 58rpx;
+  z-index: 15
+}
+
+.know_BG{
+  width: 154rpx;
+  position: absolute;
+  right: 50rpx;
+  bottom: 50rpx;
+  z-index: 15
+}

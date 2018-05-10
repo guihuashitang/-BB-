@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/faceHome/faceHome",
+    "pages/Photograph/Photograph",
+    "pages/makePhoto/makePhoto",
+    "pages/toAgree/toAgree",
+    "pages/moreSeries/moreSeries"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "逗脸",
+    "navigationBarTextStyle": "black"
+  }
+}

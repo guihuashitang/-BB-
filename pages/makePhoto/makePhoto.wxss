@@ -1,0 +1,418 @@
+/* pages/makePhoto/makePhoto.wxss */
+
+.no_build {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.no_build .build_bg {
+  width: 100%;
+  height: 100%;
+}
+
+.gif_loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 600rpx;
+  height: 1010rpx;
+  margin-left: -275rpx;
+  margin-top: -455rpx;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  padding: 5rpx 45rpx 20rpx 45rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  perspective: 1000px;
+}
+
+.photoShake {
+  position: relative;
+  border-radius: 15rpx;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - 160rpx);
+}
+
+.rota_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: all 0.5s ease 0s;
+}
+
+.BG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10rpx;
+  /* transform: rotateY(180deg); */
+  font-size: 28rpx;
+
+}
+
+.photoShake .bg_img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.moredetailBackimage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  opacity: 1;
+}
+
+.moredetail {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 10rpx;
+  /* transform: rotateY(180deg); */
+  padding: 0 50rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  left: 0;
+  top: 0;
+}
+
+.photoShake .shake {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  color: #ffffff;
+  font-size: 26rpx;
+  right: 10rpx;
+  top: 10rpx;
+  z-index: 10;
+  background: #aaaaaa;
+  border-radius: 10rpx;
+  padding: 5rpx
+}
+
+.photoShake .shake .shakeLogo {
+  width: 37rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+  transform-origin: 50% 50%;
+   animation: shake  1.8s infinite ; 
+
+}
+@keyframes  shake{
+   0%{transform: rotate(0)}
+  94%{transform: rotate(0)}
+  96%{ transform: rotate(-25deg)} 
+  98%{ transform: rotate(25deg)} 
+  99%{ transform: rotate(-25deg)} 
+  100%{ transform: rotate(0)}
+}
+
+.toShare {
+  width: 100%;
+  height: 120rpx;
+  background: linear-gradient(to right, #ffa937, #fe3769);
+  border-radius: 15rpx;
+  box-shadow: 0 10rpx 10rpx #fb94a4;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.toShare .shareLogo {
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 5rpx;
+}
+
+.toShare .shareFriendLogo {
+  width: 65rpx;
+  height: 50rpx;
+  margin-bottom: 5rpx;
+}
+
+.point {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.point image {
+  width: 482rpx;
+  height: 782rpx;
+}
+
+.point .point-txt {
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+  padding: 0 50rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s ease 0s;
+  transform: rotateY(0);
+}
+
+.isDetail {
+  transform-origin: 50% 50%;
+  transform: rotateY(180deg);
+}
+
+.pointLong {
+  background: url(http://image.chubanyun.net/images/faceChange/pointLong.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 175rpx;
+  height: 90rpx;
+  position: absolute;
+  z-index: 10;
+  bottom: 10rpx;
+  right: 40rpx;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 40rpx 10rpx 0 0;
+  display: table-cell;
+  vertical-align: bottom;
+  text-align: right;
+}
+
+.modal .pay_moadl {
+  position: fixed;
+  width: 520rpx;
+  height: 340rpx;
+  background-color: #fff;
+  left: 50%;
+  top: 50%;
+  margin-left: -260rpx;
+  margin-top: -170rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 32rpx;
+  z-index: 11;
+}
+
+.font {
+  font-size: 40rpx;
+  color: #a37031;
+  margin-bottom: 20rpx;
+}
+
+.modal .pay_moadl .pay_bg {
+  width: 100%;
+  height: 100%;
+  margin-top: -100%;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 20rpx;
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+}
+
+.button .cancel {
+  width: 40%;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 10rpx;
+  border: 1px solid #eee;
+  color: #999;
+}
+
+.button .confirm {
+  width: 90%;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 10rpx;
+  background: linear-gradient(to right, #ffa937, #fe3769);
+  color: #fff;
+  box-shadow: 0 5rpx 5rpx #fb94a4;
+  position: relative;
+  margin: 10px auto;
+}
+
+.button .confirm:active {
+  box-shadow: none;
+}
+
+.close_pay {
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 0rpx;
+  z-index: 999;
+}
+
+.savePhoto {
+  width: 520rpx;
+  height: 400rpx;
+  background-color: #fff;
+  position: fixed;
+  margin-left: -260rpx;
+  margin-top: -200rpx;
+  border-radius: 10rpx;
+  left: 50%;
+  top: 50%;
+  z-index: 11;
+  text-align: center;
+}
+
+.savePhoto .successLogo {
+  width: 222rpx;
+  height: 222rpx;
+  margin-top: -111rpx;
+}
+
+.savePhoto .save_success {
+  font-size: 36rpx;
+  color: #fe3769;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.savePhoto .save_content {
+  font-size: 28rpx;
+}
+
+.button_save {
+  position: absolute;
+  bottom: 20rpx;
+  width: 100%;
+  font-size: 32rpx;
+  padding: 0 20rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.button_save .accept {
+  background: linear-gradient(to right, #ffa937, #fe3769);
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 5rpx 5rpx #fb94a4;
+}
+
+.button_save .accept:active {
+  box-shadow: none;
+}
+
+.toShare .toshareFriend {
+  position: relative;
+}
+
+.btn-share {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0);
+  left: 0;
+  top: 0;
+  border: none;
+  opacity: 0;
+}
+
+.title {
+  background-color: #a42322;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  padding: 30rpx;
+  left: 35rpx;
+  top: 40rpx;
+  color: #fff;
+  font-weight: bold;
+  writing-mode: vertical-lr;
+  line-height: 15rpx;
+  letter-spacing: 2rpx;
+  z-index: 20;
+}
+
+.btn_sub {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.aaaaa {
+  position: absolute;
+  padding: 20rpx;
+  background: #fff;
+  color: #333;
+  font-size: 25rpx;
+  left: 50%;
+  top: 50%;
+}
+
+.rotate {
+  transform-origin: 50% 50%;
+  transform: rotateY(180deg);
+}
+
+.closeX {
+  /* background: url(/pages/images/close_pay.png); */
+  position: absolute;
+  right: 5rpx;
+  top: 5rpx;
+  width: 44rpx;
+  height: 44rpx;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 44rpx;
+  color: #fff;
+  z-index: 13;
+}
+

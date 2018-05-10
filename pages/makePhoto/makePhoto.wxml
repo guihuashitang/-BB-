@@ -1,0 +1,77 @@
+<!--pages/makePhoto/makePhoto.wxml-->
+<view class='container' wx:if='{{!isLoading}}'>
+  <view class='photoShake {{detail}}' catchtap='toDetails'>
+    <!-- <view class='detail {{isDetail}} ' >
+      <text>{{share_guid_text}}</text>
+    </view> -->
+    <view class='rota_bg {{rotate}}'>
+      <image src='{{path}}' class='bg_img' bindload="imageUtil" style='width:{{imagewidth}}px;height: {{imageheight}}px;left:{{position}};margin-left:-{{imagewidth/2}}px'></image>
+    </view>
+    <view class='BG' wx:if='{{dis}}'>
+      <image wx:if="{{moredetailBackimage!==''}}" class='moredetailBackimage' src='{{moredetailBackimage}}'></image>
+      <view class='moredetail'>{{moredetail==null?'':moredetail}}</view>
+    </view>
+    <view class='shake' catchtap='shakeClick'>
+      <image class='shakeLogo' src='/pages/images/shakeLogo.png'></image>
+      <view>摇一摇切换角色</view>
+    </view>
+    <view class='point' wx:if="{{isFirst}}" catchtap='toDetails'>
+      <image class='point-img' src='/pages/images/shark.png'></image>
+      <view class='point-txt'>
+        <!-- <view>点击一下</view>
+        <view>能了解更多角色信息哦</view> -->
+      </view>
+    </view>
+    <view class='title'>{{role_name}}</view>
+    <!-- <view class='pointLong' wx:if="{{!isFirst}}">{{txt}}</view> -->
+  </view>
+  <view class='toShare'>
+    <view bindtap='toSavePhoto' class='toSavePhoto'>
+      <image class='shareLogo' src='/pages/images/circleFriends.png'></image>
+      <view>保存图片</view>
+    </view>
+    <view class='toshareFriend'>
+      <image class='shareFriendLogo' src='/pages/images/wxLogo.png'></image>
+      <view>分享好友</view>
+      <button class='btn-share' open-type='share'></button>
+    </view>
+  </view>
+</view>
+<!--loading  -->
+<view class='no_build' wx:if='{{isLoading}}'>
+  <image class='build_bg' src='/pages/images/build_bg.jpg'></image>
+  <image class='gif_loading' src='/pages/images/shengchengzhong.gif'></image>
+</view>
+<!--支付  -->
+<view class='modal' wx:if="{{isDisplayPay}}">
+  <view class='mask'></view>
+  <view class='pay_moadl'>
+    <view class='closeX' catchtap='closePay'>x</view>
+    <!-- <image src='/pages/images/close_pay.png' class='close_pay' catchtap='closePay'></image> -->
+    <image src='/pages/images/pay_bg.png' class='pay_bg'></image>
+    <view>
+      <text class='font'>打赏{{price}}元</text>
+    </view>
+    <view style='margin-top:20rpx'>挑战更多角色~</view>
+    <view class='button'>
+      <!-- <view class='cancel' catchtap='closePay'>取消</view> -->
+      <view class='confirm' catchtap='UserPaySerise'>赏</view>
+    </view>
+  </view>
+</view>
+<!--保存成功  分享  -->
+<view view class='modal_share' wx:if='{{isSave}}'>
+  <view class='mask'></view>
+  <view class='savePhoto'>
+    <image src='/pages/images/successLogo.png' class='successLogo'></image>
+    <view class='save_success'>保存成功</view>
+    <view class='save_content'>图片已保存至本地相册</view>
+    <view class='save_content'>发朋友圈请直接到相册选择</view>
+    <view class='button_save'>
+      <view class='accept' catchtap='saveSuccess'>确认</view>
+    </view>
+  </view>
+
+</view>
+<!--页面加载  -->
+<loading hidden="{{pageLoad}}">图片生成中...</loading>

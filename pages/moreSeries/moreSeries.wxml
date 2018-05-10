@@ -1,0 +1,24 @@
+<!--pages/moreSeries/moreSeries.wxml-->
+<view class='container'>
+  <view class='list'>
+    <block wx:for="{{moreList}}">
+      <view class='item flexR' catchtap='toPhoto' style='width:{{widthN}}px;height:{{widthN}}px' data-id='{{item.id}}'>
+         <image src='{{item.list_img}}'></image> 
+         <view class='mask_M'></view>
+        <view class='itemName'>{{item.series_name}}</view>
+      </view>
+    </block>
+  </view>
+    <view>
+    <view class='yes' wx:if="{{pageMore}}">加载完成</view>
+    <view class='load-add' wx:if="{{pageLoading}}">
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+    </view>
+  </view>
+</view>
+<!--页面加载  -->
+<loading hidden="{{pageLoad}}">数据加载中...</loading>
