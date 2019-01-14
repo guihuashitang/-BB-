@@ -22,6 +22,10 @@ page view {
 }
 
 
+.asdasdas{
+  border: 1px
+}
+
 /*一排省略*/
 
 .a-line {
