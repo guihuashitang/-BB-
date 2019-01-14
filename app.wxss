@@ -14,11 +14,15 @@ page view {
   align-items: center;
 }
 
+
 .flexC {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.q{
 }
 
 
